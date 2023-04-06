@@ -4,6 +4,7 @@ import com.example.bddseleniumspring.SpringBaseTestNGTest;
 import com.example.bddseleniumspring.page.google.GooglePage;
 import com.example.bddseleniumspring.util.ScreenShotUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,6 +18,7 @@ public class GoogleTest extends SpringBaseTestNGTest {
     @Autowired
     private GooglePage googlePage;
 
+    @Lazy
     @Autowired
     private ScreenShotUtil screenShotUtil;
 
