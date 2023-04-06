@@ -8,6 +8,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 
 public class GoogleTest extends SpringBaseTestNGTest {
 
@@ -26,7 +29,7 @@ public class GoogleTest extends SpringBaseTestNGTest {
         this.googlePage.getSearchComponent().search("spring boot");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenShot();
+        this.screenShotUtil.takeScreenShot("googleTest_" + Instant.now().getEpochSecond() + ".png");
     }
 
 }
