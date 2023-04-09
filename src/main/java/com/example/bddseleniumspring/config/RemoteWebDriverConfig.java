@@ -19,9 +19,6 @@ import java.net.URL;
 @Profile("remote")
 public class RemoteWebDriverConfig {
 
-    @Value("${default.timeout:30}")
-    private int timeout;
-
     @Value("${selenium.grid.url}")
     private URL url;
 
@@ -37,8 +34,4 @@ public class RemoteWebDriverConfig {
         return new RemoteWebDriver(this.url, DesiredCapabilities.chrome());
     }
 
-    @Bean
-    public WebDriverWait webDriverWait(WebDriver driver){
-        return new WebDriverWait(driver, this.timeout);
-    }
 }
